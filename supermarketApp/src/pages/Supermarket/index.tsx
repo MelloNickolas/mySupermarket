@@ -1,16 +1,33 @@
 import React from "react";
-import { Text, View, Image } from 'react-native';
-import logo from "../../../assets/logo.png"
+import { Text, View, Image, StyleSheet, Dimensions } from "react-native";
+import logo from "../../../assets/logo.png";
 
 export default function Supermarket() {
-    return (
-        <View>
-            <Image source={logo}/>
-        </View>
-
-    )
+  return (
+    <>
+      <Image source={logo} style={styles.header} />
+      <View style={styles.cardTitle}>
+        <Text style={styles.title}>My Supermarket </Text>
+      </View>
+    </>
+  );
 }
 
+const width = Dimensions.get('screen').width;
 
-// #4ECCA3 cor verde da logo
-// #393E46 cor preta da logo
+const styles = StyleSheet.create({
+  header: {
+    width: "100%",
+    height: 100
+  },
+  cardTitle: {
+    paddingLeft: 10,
+    borderStyle: "solid",
+    borderColor: "black"
+  },
+  title: {
+        fontFamily: "Caveat"
+  },
+});
+
+// color image #FFDE7D
