@@ -31,25 +31,21 @@ const DATA = [
 export default function Supermarket() {
   return (
     <>
-      <Image source={logo} style={styles.topo} />
-
-
-      <SectionList
-        sections={DATA}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <Text style={styles.title}>{item}</Text>
-          </View>
-        )}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.header}>{title}</Text>
-        )}
-      />
-
-
-
-
+      <View style={styles.back}>
+        <Image source={logo} style={styles.topo} />
+        <SectionList
+          sections={DATA}
+          keyExtractor={(item, index) => item + index}
+          renderItem={({ item }) => (
+            <View style={styles.item}>
+              <Text style={styles.title}>{item}</Text>
+            </View>
+          )}
+          renderSectionHeader={({ section: { title } }) => (
+            <Text style={styles.header}>{title}</Text>
+          )}
+        />
+      </View>
     </>
   );
 }
@@ -57,24 +53,25 @@ export default function Supermarket() {
 const width = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
+  back: {
+   // backgroundColor: "#000000",
+  },
   topo: {
     width: "100%",
     height: 100,
   },
   header: {
-      fontSize: 40,
-      marginVertical: 20,
-      textAlign: "center",
-      
+    color: "#ed8b00",
+    fontSize: 40,
+    textAlign: "center",
   },
   title: {
     fontFamily: "Caveat",
     fontSize: 30,
   },
   item: {
-    backgroundColor: "#f9c2ff",
     padding: 20,
-    marginVertical: 3,
+    backgroundColor: "blue"
   },
 });
 
