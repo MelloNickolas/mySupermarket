@@ -11,8 +11,8 @@ import logo from "../../../assets/logo.png";
 
 const DATA = [
   {
-    title: "Main dishes",
-    data: ["Pizza", "Burger", "Risotto"],
+    title: "FRIOS",
+    data: ["Mussarela", "Presunto", "Mortadela"],
   },
   {
     title: "Sides",
@@ -31,10 +31,9 @@ const DATA = [
 export default function Supermarket() {
   return (
     <>
-      <Image source={logo} style={styles.header} />
-      <View style={styles.container}>
-        <Text style={styles.title}> Products </Text>
-      </View>
+      <Image source={logo} style={styles.topo} />
+
+
       <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item + index}
@@ -47,6 +46,10 @@ export default function Supermarket() {
           <Text style={styles.header}>{title}</Text>
         )}
       />
+
+
+
+
     </>
   );
 }
@@ -54,23 +57,26 @@ export default function Supermarket() {
 const width = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
-  header: {
+  topo: {
     width: "100%",
     height: 100,
   },
-  container: {
-    paddingVertical: 20,
-    paddingHorizontal: 20,
+  header: {
+      fontSize: 40,
+      marginVertical: 20,
+      textAlign: "center",
+      
   },
   title: {
     fontFamily: "Caveat",
-    fontSize: 50,
+    fontSize: 30,
   },
   item: {
     backgroundColor: "#f9c2ff",
     padding: 20,
-    marginVertical: 8,
+    marginVertical: 3,
   },
 });
 
-// color image #FFDE7D
+// color image yellow #ed8b00
+// color image black #000000
