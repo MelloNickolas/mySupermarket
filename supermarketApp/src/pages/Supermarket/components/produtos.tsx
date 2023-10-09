@@ -8,17 +8,18 @@ import {
   Dimensions,
 } from "react-native";
 
-type props = {
-    nome: string,
-    preco: string,
-    imagem: string,
+import mussarela from "../../../../assets/frios/mussarela.png";
+
+type props ={
+  nome: string,
+  preco: string
 }
 
-export default function ({nome, preco, imagem} : props) {
+export default function ({nome, preco} :props) {
   return (
     <>
       <View style={styles.containerImg}>
-        <View style={styles.imgContainer}>{imagem}</View>
+        <Image source={mussarela} style={styles.imgContainer} />
         <View style={styles.container}>
           <View style={styles.start}>
             <Text style={styles.text}>{nome}</Text>

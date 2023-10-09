@@ -1,8 +1,14 @@
 import React from "react";
 import { Text, View, Image, StyleSheet,  ScrollView, Dimensions } from "react-native";
 import logo from "../../../assets/logo.png";
+import dados from "../../mocks/products"
 import Produtos from "./components/produtos";
+import Title from "./components/title";
 
+type props ={
+  image: URL,
+  
+}
 
 export default function Supermarket() {
   return (
@@ -13,7 +19,7 @@ export default function Supermarket() {
 
 
         <View style={styles.containerTitle}>
-          <Text style={styles.title}>FRIOS</Text>
+          <Title sessao={dados.título.sessao}/>
         </View>
 
         <View style={styles.containerLinha}>
@@ -21,9 +27,12 @@ export default function Supermarket() {
             <Text>.</Text>
           </View>
         </View>
-
-        <Produtos />
      
+        <Produtos 
+          nome={dados.produto.nome}
+          preco={dados.produto.preco}
+        />
+          
       </View>
     </>
   );
@@ -42,12 +51,7 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: 10,
   },
-  title: {
-    fontSize: 30,
-    color: "#ed8b00",
-    fontWeight: "bold",
-    fontFamily: "Caveat",
-  },
+
   topo: {
     width: "100%",
     height: 90,
